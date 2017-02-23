@@ -1,0 +1,24 @@
+{
+  "name": "handlebars-compile-loader",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dinistro/handlebars-compile-loader.git"
+  },
+  "author": "Christian Ulmann",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dinistro/handlebars-compile-loader/issues"
+  },
+  "homepage": "https://github.com/Dinistro/handlebars-compile-loader#readme",
+  "dependencies": {
+    "handlebars": "^4.0.6",
+    "handlebars-wax": "^5.1.1",
+    "loader-utils": "^1.0.2"
+  }
+}
