@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,6 @@
   "homepage": "https://github.com/Dinistro/handlebars-compile-loader#readme",
   "dependencies": {
     "handlebars": "^4.0.6",
-    "handlebars-wax": "^5.1.1",
-    "loader-utils": "^1.0.2"
+    "handlebars-wax": "^5.1.1"
   }
 }

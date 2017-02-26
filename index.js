@@ -1,16 +1,31 @@
-var configKey = 'handlebarsLoader';
-var loaderUtils = require("loader-utils");
+var handlebars = require('handlebars');
+var handlebarsWax = require('handlebars-wax');
 
 module.exports = function(source) {
     this.cacheable();
-    var query = loaderUtils.parseQuery(this.query);
 
+    let options = this.query;
 
-    console.log('query', this.query);
+    var hb = handlebars;//|| gulpHb.handlebars.create();
+    var wax = handlebarsWax(hb, options);
 
-    if (this.options[configKey]) {
-        console.log(this.options[configKey]);
-    }
+    if (options.partials) {
+  		wax.partials(options.partials);
+  	}
 
-    return JSON.stringify(source);
+  	if (options.helpers) {
+  		wax.helpers(options.helpers);
+  	}
+
+  	if (options.decorators) {
+  		wax.decorators(options.decorators);
+  	}
+
+  	if (options.data) {
+  		wax.data(options.data);
+  	}
+
+    var template = wax.compile(source);
+
+    return 'module.exports =' + JSON.stringify(template(options.data));
 };
